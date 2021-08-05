@@ -13,8 +13,6 @@ const Nav = ({setSelectedOption}) => {
             <h2 onClick={()=>setSelectedOption(request.fetchMystery)}>Mystery</h2>
             <h2 onClick={()=>setSelectedOption(request.fetchSciFi)}>Sci-Fi</h2>
             <h2 onClick={()=>setSelectedOption(request.fetchWestern)}>Western</h2>
-            <h2 onClick={()=>setSelectedOption(request.fetchAnimation)}>Animation</h2>
-            <h2 onClick={()=>setSelectedOption(request.fetchWestern)}>Western</h2>
         </div>
     );
 };
