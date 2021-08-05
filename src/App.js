@@ -1,15 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import Header from "./componets/Header";
 import Nav from "./componets/Nav";
 import Results from "./componets/Results";
+import request from "./request";
 
 function App() {
+    const [selectedOption,setSelectedOption]= useState(request.fetchTrending);
   return (
     <div className="app">
         <Header/>
-        <Nav/>
-        <Results/>
+        <Nav setSelectedOption={setSelectedOption}/>
+        <Results selectedOption={selectedOption}/>
     </div>
   );
 }

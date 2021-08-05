@@ -1,13 +1,22 @@
 import React from 'react';
 import '../css/VideoCard.css';
+import {ThumbUp} from "@material-ui/icons";
 
+
+const base_url = 'https://image.tmdb.org/t/p/original';
 const VideoCard = ({movie}) => {
+
     return (
         <div className='videoCard'>
-            <img src="https://images.unsplash.com/photo-1615986200762-a1ed9610d3b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aHVsdXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""/>
-            <p>This is a file about nature</p>
-            <h2>Movie title</h2>
-            <p>Number of likes...</p>
+            <img src={`${base_url}${movie.backdrop_path || movie.poster}`} alt=""/>
+            <p>{movie.overview}</p>
+            <h2>{movie.title}</h2>
+            <p className='videoCard_stats'>
+                {movie.video && `${movie.video} .`}
+                {`${movie.release_date}.`}
+                <ThumbUp/>{" "}
+                {movie.vote_count}
+            </p>
 
         </div>
     );

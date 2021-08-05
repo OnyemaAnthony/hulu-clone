@@ -9,6 +9,13 @@
     transform: scale(1.09);
 }
 
+.videoCard_stats{
+    display: none;
+}
+.videoCard:hover > .videoCard_stats{
+    display: inline;
+}
+
 .videoCard > img{
     height: 300px;
     object-fit: contain;
